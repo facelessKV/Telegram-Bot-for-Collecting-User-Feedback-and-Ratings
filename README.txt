@@ -1,230 +1,251 @@
-# ИНСТРУКЦИЯ ПО УСТАНОВКЕ И ЗАПУСКУ ТЕЛЕГРАМ-БОТА ДЛЯ ОТЗЫВОВ
+⭐️ Telegram Bot Collecting User Feedback and Ratings
 
-## ЧТО ДЕЛАЕТ БОТ?
+Want to collect not just feedback but also ratings? ⭐️⭐️⭐️⭐️⭐️
+This bot helps users leave reviews and rate your service.
 
-Этот бот позволяет пользователям:
-- Оставлять отзывы о продуктах или услугах
-- Просматривать отзывы других пользователей 
-- Ставить оценки продуктам по шкале от 1 до 5 звезд
-- Администраторам получать статистику
+✅ What does it do?
 
-## УСТАНОВКА НА WINDOWS
+• 📢 Collects text reviews
+• ⭐️ Allows users to rate (from 1 to 5)
+• 📊 Generates analytics based on average ratings
 
-### Шаг 1: Установка Python 3.10
+🔧 Features
 
-1. Скачайте Python 3.10.9 с официального сайта:
-   - Перейдите по ссылке: https://www.python.org/downloads/release/python-3109/
-   - Прокрутите страницу вниз до раздела "Files"
-   - Выберите "Windows installer (64-bit)" для скачивания
+✅ Rating system support
+✅ Automatic calculation of average rating
+✅ Export of feedback and ratings to a CSV file
 
-2. Запустите скачанный файл
-   - **ВАЖНО!** Поставьте галочку "Add Python 3.10 to PATH" перед установкой
-   - Нажмите "Install Now"
-   - Дождитесь завершения установки
+📩 Want to improve your service with feedback and ratings?
 
-3. Проверьте установку:
-   - Откройте командную строку (нажмите Win+R, введите "cmd" и нажмите Enter)
-   - Введите команду: `python --version`
-   - Должно появиться сообщение "Python 3.10.9" (или похожая версия)
+Message me on Telegram, and I’ll help you set up this bot! 🚀
 
-### Шаг 2: Скачивание и подготовка бота
+# INSTRUCTIONS FOR INSTALLING AND LAUNCHING A TELEGRAM BOT FOR REVIEWS
 
-1. Создайте папку для бота:
-   - Откройте Проводник Windows
-   - Создайте новую папку, например "telegram-bot", где вам удобно
+## WHAT DOES THE BOT DO?
 
-2. Скопируйте файлы бота в эту папку:
-   - Файл main.py
-   - Файл config.py
-   - Файл database.py
-   - Файл handlers.py
-   - Файл keyboards.py
+This bot allows users to:
+- Leave reviews of products or services
+- View reviews from other users
+- Rate products on a scale of 1-5 stars
+- Receive statistics for administrators
 
-3. Создайте файл .env:
-   - Щелкните правой кнопкой мыши в папке с ботом
-   - Выберите "Создать" -> "Текстовый документ"
-   - Назовите его ".env" (обязательно с точкой в начале)
-   - Если система не позволяет создать файл с таким именем, создайте "env.txt", а потом переименуйте его в ".env"
+## INSTALLATION ON WINDOWS
 
-4. Откройте файл .env в Блокноте и введите:
-   ```
-   BOT_TOKEN=ваш_токен_бота
-   ADMIN_IDS=ваш_числовой_id
-   ```
-   (О получении токена и ID - см. ниже)
+### Step 1: Install Python 3.10
 
-### Шаг 3: Установка необходимых библиотек
+1. Download Python 3.10.9 from the official website:
+- Follow the link: https://www.python.org/downloads/release/python-3109/
+- Scroll down to the "Files" section
+- Select "Windows installer (64-bit)" to download
 
-1. Откройте командную строку (Win+R, введите "cmd", нажмите Enter)
+2. Run the downloaded file
+- **IMPORTANT!** Check "Add Python 3.10 to PATH" before installing
+- Click "Install Now"
+- Wait for the installation to complete
 
-2. Перейдите в папку с ботом:
-   ```
-   cd путь_к_вашей_папке
-   ```
-   Например: `cd C:\Users\Имя\Desktop\telegram-bot`
+3. Check the installation:
+- Open a command prompt (press Win+R, enter "cmd" and press Enter)
+- Enter the command: `python --version`
+- The message "Python 3.10.9" (or similar version) should appear
 
-3. Создайте виртуальное окружение:
-   ```
-   python -m venv venv
-   ```
+### Step 2: Downloading and preparing the bot
 
-4. Активируйте виртуальное окружение:
-   ```
-   venv\Scripts\activate
-   ```
+1. Create a folder for the bot:
+- Open Windows Explorer
+- Create a new folder, for example "telegram-bot", wherever you like
 
-5. Обновите pip и установите необходимые библиотеки:
-   ```
-   python -m pip install --upgrade pip setuptools wheel
-   pip install aiogram python-dotenv
-   ```
+2. Copy the bot files to this folder:
+- File main.py
+- File config.py
+- File database.py
+- File handlers.py
+- File keyboards.py
 
-### Шаг 4: Запуск бота
+3. Create a file .env:
+- Right-click in the folder with the bot
+- Select "New" -> "Text document"
+- Name it ".env" (required with a period at the beginning)
+- If the system does not allow you to create a file with this name, create "env.txt", and then rename it to ".env"
 
-1. В той же командной строке с активированным окружением:
-   ```
-   python main.py
-   ```
+4. Open the .env file in Notepad and enter:
+```
+BOT_TOKEN=your_bot_token
+ADMIN_IDS=your_numeric_id
+```
+(See below for information on obtaining a token and ID)
 
-2. Если всё установлено правильно, вы увидите сообщения об инициализации бота
-3. Теперь можно открыть Telegram и найти вашего бота
+### Step 3: Installing the required libraries
 
-## УСТАНОВКА НА LINUX (Ubuntu/Debian)
+1. Open a command prompt (Win+R, type "cmd", press Enter)
 
-### Шаг 1: Установка Python 3.10
+2. Go to the folder with the bot:
+```
+cd path_to_your_folder
+```
+For example: `cd C:\Users\Name\Desktop\telegram-bot`
 
-1. Откройте терминал (Ctrl+Alt+T)
+3. Create a virtual environment:
+```
+python -m venv venv
+```
 
-2. Обновите списки пакетов:
-   ```
-   sudo apt update
-   ```
+4. Activate the virtual environment:
+```
+venv\Scripts\activate
+```
 
-3. Установите необходимые инструменты:
-   ```
-   sudo apt install software-properties-common -y
-   ```
+5. Update pip and install the required libraries:
+```
+python -m pip install --upgrade pip setuptools wheel
+pip install aiogram python-dotenv
+```
 
-4. Добавьте репозиторий с Python:
-   ```
-   sudo add-apt-repository ppa:deadsnakes/ppa -y
-   ```
+### Step 4: Launch the bot
 
-5. Установите Python 3.10:
-   ```
-   sudo apt install python3.10 python3.10-venv python3.10-dev -y
-   ```
+1. In the same command line with the environment activated:
+```
+python main.py
+```
 
-6. Проверьте установку:
-   ```
-   python3.10 --version
-   ```
+2. If everything is installed correctly, you will see messages about the bot initialization
+3. Now you can open Telegram and find your bot
 
-### Шаг 2: Скачивание и подготовка бота
+## INSTALLATION ON LINUX (Ubuntu/Debian)
 
-1. Создайте папку для бота:
-   ```
-   mkdir ~/telegram-bot
-   cd ~/telegram-bot
-   ```
+### Step 1: Install Python 3.10
 
-2. Скопируйте файлы бота в эту папку:
-   - Если файлы бота у вас на компьютере, используйте любой доступный метод для копирования
-   - Если файлы доступны через git, можно клонировать репозиторий
+1. Open a terminal (Ctrl+Alt+T)
 
-3. Создайте файл .env:
-   ```
-   nano .env
-   ```
+2. Update package lists:
+```
+sudo apt update
+```
 
-4. Введите в открывшийся редактор:
-   ```
-   BOT_TOKEN=ваш_токен_бота
-   ADMIN_IDS=ваш_числовой_id
-   ```
-   Сохраните файл: Ctrl+O, затем Enter, затем Ctrl+X для выхода
+3. Install the necessary tools:
+```
+sudo apt install software-properties-common -y
+```
 
-### Шаг 3: Установка необходимых библиотек
+4. Add a repository with Python:
+```
+sudo add-apt-repository ppa:deadsnakes/ppa -y
+```
 
-1. Находясь в папке с ботом, создайте виртуальное окружение:
-   ```
-   python3.10 -m venv venv
-   ```
+5. Install Python 3.10:
+```
+sudo apt install python3.10 python3.10-venv python3.10-dev -y
+```
 
-2. Активируйте виртуальное окружение:
-   ```
-   source venv/bin/activate
-   ```
+6. Check the installation:
+```
+python3.10 --version
+```
 
-3. Обновите pip и установите необходимые библиотеки:
-   ```
-   pip install --upgrade pip setuptools wheel
-   pip install aiogram python-dotenv
-   ```
+### Step 2: Download and prepare the bot
 
-### Шаг 4: Запуск бота
+1. Create a folder for the bot:
+```
+mkdir ~/telegram-bot
+cd ~/telegram-bot
+```
 
-1. В том же терминале с активированным окружением:
-   ```
-   python main.py
-   ```
+2. Copy the bot files to this folder:
+- If the bot files are on your computer, use any available method to copy
+- If the files are available via git, you can clone the repository
 
-2. Если всё установлено правильно, вы увидите сообщения об инициализации бота
-3. Теперь можно открыть Telegram и найти вашего бота
+3. Create a .env file:
+```
+nano .env
+```
 
-## ПОЛУЧЕНИЕ ТОКЕНА БОТА
+4. Enter in the editor that opens:
+```
+BOT_TOKEN=your_bot_token
+ADMIN_IDS=your_numeric_id
+```
+Save the file: Ctrl+O, then Enter, then Ctrl+X to exit
 
-1. Откройте Telegram и найдите @BotFather (официальный бот для создания ботов)
-2. Отправьте команду /newbot
-3. Следуйте инструкциям:
-   - Введите имя бота (будет отображаться в чатах)
-   - Введите юзернейм бота (должен заканчиваться на "bot")
-4. BotFather пришлет сообщение с токеном, он выглядит примерно так:
-   `123456789:ABCdefGhIJklmNoPQRstUVwxYZ`
-5. Скопируйте этот токен в файл .env вместо "ваш_токен_бота"
+### Step 3: Installing the necessary libraries
 
-## ПОЛУЧЕНИЕ ID АДМИНИСТРАТОРА
+1. While in the bot folder, create a virtual environment:
+```
+python3.10 -m venv venv
+```
 
-1. Найдите бот @userinfobot в Telegram
-2. Отправьте ему любое сообщение
-3. Бот пришлет информацию о вас, включая ваш ID (числовой код)
-4. Скопируйте этот ID в файл .env вместо "ваш_числовой_id"
+2. Activate the virtual environment:
+```
+source venv/bin/activate
+```
 
-## ИСПОЛЬЗОВАНИЕ БОТА
+3. Update pip and install the necessary libraries:
+```
+pip install --upgrade pip setuptools wheel
+pip install aiogram python-dotenv
+```
 
-После запуска бота:
+### Step 4: Launching the bot
 
-1. Найдите своего бота в Telegram (по имени, которое вы указали при создании)
-2. Отправьте боту команду /start
-3. Следуйте инструкциям бота
+1. In the same terminal with the activated environment:
+```
+python main.py
+```
 
-Доступные команды:
-- /leave_feedback - оставить отзыв
-- /view_feedback - просмотреть отзывы
-- /rate - оценить продукт
-- /stats - получить статистику (только для админов)
+2. If everything is installed correctly, you will see messages about the bot initialization
+3. Now you can open Telegram and find your bot
 
-## ВОЗМОЖНЫЕ ПРОБЛЕМЫ И ИХ РЕШЕНИЯ
+## RECEIVING A TOKEN BOT
+
+1. Open Telegram and find @BotFather (official bot for creating bots)
+2. Send the command /newbot
+3. Follow the instructions:
+- Enter the bot name (will be displayed in chats)
+- Enter the bot username (must end with "bot")
+4. BotFather will send a message with a token, it looks something like this:
+`123456789:ABCdefGhIJklmNoPQRstUVwxYZ`
+5. Copy this token to the .env file instead of "your_bot_token"
+
+## GETTING ADMINISTRATOR ID
+
+1. Find the @userinfobot bot in Telegram
+2. Send it any message
+3. The bot will send information about you, including your ID (numeric code)
+4. Copy this ID to the .env file instead of "your_numeric_id"
+
+## USING THE BOT
+
+After launching the bot:
+
+1. Find your bot in Telegram (by name, which you specified when creating)
+2. Send the bot the /start command
+3. Follow the bot's instructions
+
+Available commands:
+- /leave_feedback - leave a review
+- /view_feedback - view reviews
+- /rate - rate the product
+- /stats - get statistics (for admins only)
+
+## POSSIBLE PROBLEMS AND THEIR SOLUTIONS
 
 ### 1. "python: command not found" (Linux)
-Используйте `python3.10` вместо `python`
+Use `python3.10` instead of `python`
 
 ### 2. "ImportError: No module named 'aiogram'"
-Убедитесь, что вы активировали виртуальное окружение перед запуском бота
+Make sure you have activated the virtual environment before running the bot
 
 ### 3. "NameError: name 'InlineKeyboardBuilder' is not defined"
-Проверьте, что в файле handlers.py есть строка импорта:
+Make sure that the handlers.py file contains the import line:
 ```python
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 ```
 
 ### 4. "RuntimeError: This event loop is already running"
-Перезапустите командную строку/терминал и попробуйте снова
+Restart the command line/terminal and try again
 
 ### 5. "Cannot connect to host api.telegram.org:443"
-Проверьте подключение к интернету или попробуйте через VPN
+Check your internet connection or try via VPN
 
-### ПРИМЕЧАНИЕ ДЛЯ ПОСТОЯННОЙ РАБОТЫ БОТА
+### NOTE FOR PERMANENT BOT RUNNING
 
-Эти инструкции запускают бота только пока запущена командная строка/терминал.
-Для постоянной работы бота на сервере потребуется настройка системного сервиса.
+These instructions only run the bot while the command line/terminal is running.
+To run the bot permanently on the server, you will need to configure a system service.
